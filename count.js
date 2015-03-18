@@ -8,7 +8,7 @@ var parseItem = function (item) {
     var rawText = jQuery(this).attr('data-tooltip');
     var dataText = rawText.split(': ')[1];
     console.log(dataText);
-    estimate.original += parseFloat(dataText);
+    estimate.original += parseFloat(dataText) || 0;
   });
 
   item.find('[data-tooltip*="Remaining Estimate: "]').each(function () {
