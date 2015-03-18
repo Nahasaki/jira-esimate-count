@@ -35,7 +35,7 @@ var updateTime = function () {
 };
 
 jQuery().ready(function () {
-  if (GH) {
+  if (typeof GH !== 'undefined') {
     updateTime();
     AJS.$(GH).bind('workModeUIReady', function () {
       console.log('UPDATED');
