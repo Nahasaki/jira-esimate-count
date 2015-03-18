@@ -15,7 +15,7 @@ var parseItem = function (item) {
     var rawText = jQuery(this).attr('data-tooltip');
     var dataText = rawText.split(': ')[1];
     console.log(dataText);
-    estimate.remaining += parseFloat(dataText);
+    estimate.remaining += parseFloat(dataText) || 0;
   });
   return estimate;
 };
