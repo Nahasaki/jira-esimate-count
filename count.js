@@ -35,9 +35,11 @@ var updateTime = function () {
 };
 
 jQuery().ready(function () {
-  updateTime();
-  AJS.$(GH).bind('workModeUIReady', function () {
-    console.log('UPDATED');
+  if (GH) {
     updateTime();
-  });
+    AJS.$(GH).bind('workModeUIReady', function () {
+      console.log('UPDATED');
+      updateTime();
+    });
+  }
 });
